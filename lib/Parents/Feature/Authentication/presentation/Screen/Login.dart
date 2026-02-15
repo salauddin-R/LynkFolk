@@ -16,13 +16,15 @@ class LoginParent extends StatefulWidget {
 
 class _LoginParentState extends State<LoginParent> {
   Logingetxparent controller = Get.put(Logingetxparent());
+  //final controller = Get.find<Logingetxparent>();
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // resizeToAvoidBottomInset: true,
       body:Container(
-        height: double.infinity,
+        //height: double.infinity,
         width: double.infinity,
         decoration: color.linearGradient(
             topColor:color.AuthBackTop,
