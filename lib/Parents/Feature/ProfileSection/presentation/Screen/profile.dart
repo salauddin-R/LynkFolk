@@ -22,7 +22,7 @@ class PrfilePage extends StatelessWidget {
           ),
           Container(
             color: Colors.transparent,
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: FontSize.height(context) * 0.07),
+            padding: EdgeInsets.only(left: 16,right:16,top: FontSize.height(context) * 0.07),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,7 +110,9 @@ class PrfilePage extends StatelessWidget {
                         Styleclass.profileListTile("Contact Us",
                             "Get help or send us a message",
                             const Icon(Icons.support_agent),
-                                (){}
+                                (){
+                          Get.toNamed('/ContractSupport');
+                                }
                         ),
                         SizedBox(height: 7,),
                         Styleclass.profileListTile("Others",

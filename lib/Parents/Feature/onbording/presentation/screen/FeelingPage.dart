@@ -47,7 +47,7 @@ class Feelingpage extends StatelessWidget {
                  Image.asset("assets/images/onbording/Frame 1171275932.png"),
                  SizedBox(height:height*0.09,),
                  ElevatedButton(onPressed:(){
-                   Get.toNamed('/Welcome');
+                   Get.offAndToNamed('/Welcome');
                  },
                      style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
                      child:Text("Get Started",style: FontSize.smallTextWhite(color.DarkWhite),)),

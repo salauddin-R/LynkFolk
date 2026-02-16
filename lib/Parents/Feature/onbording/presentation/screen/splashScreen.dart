@@ -9,8 +9,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(const Duration(seconds: 2), () {
-        Get.toNamed('/awareness');
+      Future.delayed(const Duration(seconds:3), () {
+        Get.offAndToNamed('/awareness');
       });
     });
     return Scaffold(
@@ -52,6 +52,5 @@ class SplashScreen extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

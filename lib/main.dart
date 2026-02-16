@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return GetMaterialApp(
               debugShowCheckedModeBanner: false,
-              initialRoute:'/splashScreen',//'/PrfilePage',
+              initialRoute:'/splashScreen',
               getPages: Routepage.routes
           );
         }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../core/utils/colorClass.dart';
 import '../../../../core/utils/fontsizeClass.dart';
+import '../Screen/MessagingScreen.dart';
 
 class SharedMassagedContainerListTile extends StatelessWidget {
   final String? imogi;
@@ -14,7 +17,6 @@ class SharedMassagedContainerListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height:70,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -29,7 +31,9 @@ class SharedMassagedContainerListTile extends StatelessWidget {
           ],
         ) ,
         trailing:Icon(Icons.arrow_forward_ios),
-        onTap:onTap,
+        onTap:(){
+          Get.to(()=>ChatScreen(titleHeader:title!,));
+        }
       ),
     );
   }

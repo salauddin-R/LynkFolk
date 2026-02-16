@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/utils/CustomTextField.dart';
 import '../../../../core/utils/StyleClass.dart';
@@ -33,7 +34,9 @@ class ChangeBottomSheet extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("Forgot Password?",style: FontSize.smallTextWhite(color.fellingColor)),
+                  TextButton(onPressed:(){
+                    Get.toNamed('/ForgetPassword');
+                  }, child:Text("Forgot Password?",style: FontSize.smallTextWhite(color.fellingColor)),)
                 ],
               ),
               SizedBox(height:15,),

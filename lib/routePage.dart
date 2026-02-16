@@ -6,10 +6,12 @@ import 'Parents/Feature/Authentication/presentation/Screen/ResetPassword.dart';
 import 'Parents/Feature/Authentication/presentation/Screen/SignUp.dart';
 import 'Parents/Feature/Authentication/presentation/Screen/Welcome.dart';
 import 'Parents/Feature/Authentication/presentation/Screen/forgetPassword.dart';
+import 'Parents/Feature/BottomNabBar/BottomNabBarPage.dart';
 import 'Parents/Feature/HomeSection/presentation/Screen/AiSupport.dart';
 import 'Parents/Feature/HomeSection/presentation/Screen/CheckInPage.dart';
 import 'Parents/Feature/HomeSection/presentation/Screen/HomePage.dart';
 import 'Parents/Feature/HomeSection/presentation/Screen/HomeWelcomePage.dart';
+import 'Parents/Feature/HomeSection/presentation/Screen/MessagingScreen.dart';
 import 'Parents/Feature/HomeSection/presentation/Screen/Shared_Messages.dart';
 import 'Parents/Feature/HomeSection/presentation/Widget/ShareLinkPage.dart';
 import 'Parents/Feature/LibrarySection/presentation/screen/ArticleDetailsPage.dart';
@@ -64,6 +66,8 @@ class Routepage {
 
     //Error
     GetPage(name:'/ErrorPage', page: () => ErrorPage()),
+    //BottomNabBar
+    GetPage(name:'/BottomNabBarPage', page: () => BottomNabBarPage()),
 
     //Home
     GetPage(name:'/HomePage', page: () => HomePage()),
@@ -72,21 +76,19 @@ class Routepage {
     GetPage(name:'/AiSupportPage', page: () => AiSupportPage()),
     GetPage(name:'/ShareLinkPage', page: () => ShareLinkPage()),
     GetPage(name:'/SharedMessages', page: () => SharedMessages()),
+    GetPage(name:'/ChatScreen', page: () => ChatScreen()),
 
     //Tool
+    GetPage(name:'/SupportTools', page: () => SupportTools()),
     GetPage(name:'/ConnectionBuilder', page: () => ConnectionBuilder()),
     GetPage(name:'/ConversationStarters', page: () => ConversationStarters()),
     GetPage(name:'/ReframeTool', page: () => ReframeTool()),
-    GetPage(name:'/SupportTools', page: () => SupportTools()),
     GetPage(name:'/ReframeThis', page: () => ReframeThis()),
     GetPage(name:'/BreathingPage', page: () => BreathingPage()),
 
     //Library
     GetPage(name:'/ResourceLibrary', page: () => ResourceLibrary()),
     GetPage(name:'/AritcleDetailsPage', page: () => AritcleDetailsPage()),
-
-
-
 
 
 
