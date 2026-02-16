@@ -5,12 +5,15 @@ import 'package:untitled/Parents/Feature/HomeSection/presentation/Widget/reuseAv
 import '../../../../core/utils/StyleClass.dart';
 import '../../../../core/utils/colorClass.dart';
 import '../../../../core/utils/fontsizeClass.dart';
+import '../../../BottomNabBar/BottomNabBarPage.dart';
+import '../../../BottomNabBar/bottomGetX.dart';
 import 'IndecatorPersentRow.dart';
 
 class HomepageWidget extends StatelessWidget {
   final Widget? circleProgress;
   final OnTap? onTap;
-  const HomepageWidget({super.key,this.circleProgress,this.onTap});
+  final VoidCallback? MoodCheck;
+  const HomepageWidget({super.key,this.circleProgress,this.onTap,this.MoodCheck});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class HomepageWidget extends StatelessWidget {
         ),
         Container(
             color: Colors.transparent,
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: FontSize.height(context) * 0.07),
+            padding: EdgeInsets.only(right: 16,left: 16, top: FontSize.height(context) * 0.07),
             child: SingleChildScrollView(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +65,9 @@ class HomepageWidget extends StatelessWidget {
                             ),
                             SizedBox(height:12,),
                             (circleProgress!=null)?circleProgress!
-                                :Image.asset("assets/images/Home/MoodCheckIn.png"),
+                                :GestureDetector(
+                                onTap:MoodCheck,
+                                child: Image.asset("assets/images/Home/MoodCheckIn.png")),
                             SizedBox(height:13,),
                             Text("Last updated 00 mins ago")
                           ],
@@ -71,9 +76,13 @@ class HomepageWidget extends StatelessWidget {
                       SizedBox(height: 19,),
                       Text("Quick Actions",style:FontSize.semiBold(18),),
                       SizedBox(height: 19,),
-                      ReuseAvater.reuseContainer("assets/images/Home/AskAI.png","Ask Ai","Get instant parenting advice",(){}),
+                      ReuseAvater.reuseContainer("assets/images/Home/AskAI.png","Ask Ai","Get instant parenting advice",(){
+                        Get.toNamed('/AiSupportPage');
+                      }),
                       SizedBox(height: 10,),
-                      ReuseAvater.reuseContainer("assets/images/Home/ViewMessage.png","View Shared Messages","Review recent logs and chats",(){}),
+                      ReuseAvater.reuseContainer("assets/images/Home/ViewMessage.png","View Shared Messages","Review recent logs and chats",(){
+                        Get.toNamed('/SharedMessages');
+                      }),
                       SizedBox(height: 19,),
                       Container(
                         padding: EdgeInsets.all(14),
@@ -147,7 +156,11 @@ class HomepageWidget extends StatelessWidget {
                             ),
                             Text("Your teen has shown increased stress patterns on tuesday evenings. Try guided conversation starter",textAlign: TextAlign.end,style:FontSize.smallText14_4(),),
                             SizedBox(height: 15,),
-                            ElevatedButton(onPressed:(){},
+                            ElevatedButton(onPressed:(){
+                              final BottomGetx controller = Get.find();
+                              controller.updateIndexBySection('tools'); // Tools tab select হবে
+                              Get.to(() => BottomNabBarPage());
+                            },
                                 style: Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.35,colors: color.OpenTool,radius:30.0 ),
                                 child:Text("Open Tool")),
                             SizedBox(height: 10,),

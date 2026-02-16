@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:untitled/Parents/core/utils/CustomTextField.dart';
 import 'package:untitled/Parents/core/utils/StyleClass.dart';
 
@@ -73,7 +74,9 @@ class ShareLinkPage extends StatelessWidget {
               SizedBox(height: 30,),
               Text("Your teen can choose to join when they feel comfortable.",textAlign: TextAlign.center,style:FontSize.customeTextStyle(14.0, color.Greay)),
               //SizedBox(height: 10,),
-              TextButton(onPressed:(){}, child:Column(
+              TextButton(onPressed:(){
+                Get.back(closeOverlays: false);
+              }, child:Column(
                 children: [
                   Text("Maybe later",style: TextStyle(color: color.Black,fontSize: 15),),
                   Container(

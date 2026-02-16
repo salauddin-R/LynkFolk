@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/utils/CustomTextField.dart';
 import '../../../../core/utils/StyleClass.dart';
@@ -41,7 +42,10 @@ class ForgetPassword extends StatelessWidget {
                     SizedBox(height:8,),
 
                     SizedBox(height:8,),
-                    ElevatedButton(onPressed:(){},style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
+                    ElevatedButton(onPressed:(){
+                      FocusScope.of(context).unfocus();
+                      Get.toNamed('/OtpVerify');
+                    },style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
                         child:Text("Send Code",style: FontSize.smallTextWhite(color.DarkWhite),)),
                     SizedBox(height:12,),
 

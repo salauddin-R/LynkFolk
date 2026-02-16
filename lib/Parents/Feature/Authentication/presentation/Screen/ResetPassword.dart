@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/utils/CustomTextField.dart';
 import '../../../../core/utils/StyleClass.dart';
@@ -44,7 +45,10 @@ class Resetpassword extends StatelessWidget {
                       isPassword: true,
                     ),
                     SizedBox(height:16,),
-                    ElevatedButton(onPressed:(){},style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
+                    ElevatedButton(onPressed:(){
+                      FocusScope.of(context).unfocus();
+                      Get.toNamed('/LoginParent');
+                    },style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
                         child:Text("Verify",style: FontSize.smallTextWhite(color.DarkWhite),)),
                     SizedBox(height:12,),
                   ],

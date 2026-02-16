@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/utils/CustomTextField.dart';
 import '../../../../core/utils/StyleClass.dart';
@@ -59,14 +60,20 @@ class SignupParent extends StatelessWidget {
                     ),
                     SizedBox(height:8,),
                     SizedBox(height:8,),
-                    ElevatedButton(onPressed:(){},style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
+                    ElevatedButton(onPressed:(){
+                      FocusScope.of(context).unfocus();
+                      Get.toNamed('/LoginParent');
+                    },style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
                         child:Text("Register",style: FontSize.smallTextWhite(color.DarkWhite),)),
                     SizedBox(height:12,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Already Have an account?"),
-                        TextButton(onPressed:(){}, child:Text("Login",style:FontSize.smallTextWhite(color.Blue),))
+                        TextButton(onPressed:(){
+                          FocusScope.of(context).unfocus();
+                          Get.toNamed('/LoginParent');
+                        }, child:Text("Login",style:FontSize.smallTextWhite(color.Blue),))
                       ],
                     )
 

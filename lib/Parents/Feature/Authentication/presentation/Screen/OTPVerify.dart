@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../core/utils/StyleClass.dart';
@@ -85,7 +86,10 @@ class OtpVerify extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height:16,),
-                    ElevatedButton(onPressed:(){},style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
+                    ElevatedButton(onPressed:(){
+                      FocusScope.of(context).unfocus();
+                      Get.toNamed('/Resetpassword');
+                    },style:Styleclass.elevatedButtonStyle(context,FontSize.width(context)*0.8),
                         child:Text("Verify",style: FontSize.smallTextWhite(color.DarkWhite),)),
                     SizedBox(height:12,),
                   ],

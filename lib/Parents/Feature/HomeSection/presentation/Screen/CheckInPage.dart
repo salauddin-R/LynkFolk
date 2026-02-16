@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/utils/StyleClass.dart';
 import '../../../../core/utils/colorClass.dart';
@@ -78,11 +79,15 @@ class CheckInPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height:FontSize.height(context)*0.09),
-                        ElevatedButton(onPressed:(){},
+                        ElevatedButton(onPressed:(){
+                          Get.toNamed('/HomeWelcomePage');
+                        },
                             style: Styleclass.elevatedButtonStyle(context,double.infinity,radius: 30),
                             child:Text("Check-In",style: FontSize.semiBold(16,color: color.DarkWhite),)),
                         SizedBox(height:FontSize.height(context)*0.02),
-                      TextButton(onPressed: (){}, child:Text("SKIP FOR NOW",style:FontSize.semiBold(16,color: color.Black.withOpacity(0.6)),))
+                      TextButton(onPressed: (){
+                        Get.back(closeOverlays: false);
+                      }, child:Text("SKIP FOR NOW",style:FontSize.semiBold(16,color: color.Black.withOpacity(0.6)),))
                       ]
                   )))
         ],
